@@ -107,9 +107,13 @@ insert into dbo.SysRole(Name, Number, Type, IsDelete, CreateTime) values('超级管
 insert  into SysUser(Account, Password, UserName, IsDelete, SysRoleId, CreateTime) values('admin','e10adc3949ba59abbe56e057f20f883e','wangjiahao',0,1,GETDATE())
 
 select * from SysFunc
+update SysFunc set Name='Banner管理' where id=2
 insert into dbo.SysFunc(Name, OrderNumber, IsDisplay, Icon, CreateTime, FuncType)
 values('系统管理',1,1,'fa-gear',GETDATE(),1)
 insert into dbo.SysFunc(Name, OrderNumber, ControllerName, ActionName, ParentFuncId, IsDisplay, Icon, CreateTime, FuncType)
 values('Banner',1,'Banner','BannerMgtResult',1,1,'fa-indent',GETDATE(),2)
+
+insert into dbo.SysFuncSysRoles(SysFuncId, SysRoleId) values(1,1)
+insert into dbo.SysFuncSysRoles(SysFuncId, SysRoleId) values(2,1)
 
 
