@@ -83,13 +83,7 @@ namespace TTMS.Application.SystemMgtServices
                 {
                     // 登录成功
                     var temp = sysUser.MapTo<CurrentUserDto>();
-                    temp.FuncItems = this.GetFuncByUser(sysUser.Account);
-
-                    // admin账号特殊处理，拥有全部权限
-                    // if (sysUser.Account.ToLower() == "admin")
-                    // {
-                    // temp.FuncItems = this.GetAllNotTenantFuncs();
-                    // }            
+                    temp.FuncItems = this.GetFuncByUser(sysUser.Account);                   
                     return temp;
                 }
             }
@@ -146,12 +140,12 @@ namespace TTMS.Application.SystemMgtServices
             foreach (var f in allFunc.Where(a => a.FuncType == 1))
             {
                 var model = f;
-                var sonFuns = f.NetSysFunc1.ToList();
+                var sonFuns = f.SysFunc1.ToList();
 
-                model.NetSysFunc1.Clear();
+                model.SysFunc1.Clear();
                 foreach (var func in sonFuns.Where(func => allFuncIds.Contains(func.Id) && func.IsDisplay == true))
                 {
-                    model.NetSysFunc1.Add(func);
+                    model.SysFunc1.Add(func);
                 }
 
                 list.Add(model);

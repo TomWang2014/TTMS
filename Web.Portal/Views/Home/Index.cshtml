@@ -70,7 +70,7 @@
                                 <span class="fa arrow"></span>
                             </a>
                             <ul class="nav nav-second-level">
-                                @foreach (var c in f.NetSysFunc1)
+                                @foreach (var c in f.SysFunc1)
                                 {
                                     <li>
                                         <a class="J_menuItem" href="@Url.Action(c.ActionName,c.ControllerName,new{area=c.AreaName})" data-index="0">@c.Name</a>

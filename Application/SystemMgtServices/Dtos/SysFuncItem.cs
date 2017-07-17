@@ -74,7 +74,7 @@ namespace TTMS.Application.SystemMgtServices.Dtos
         /// <summary>
         /// 子权限
         /// </summary>
-        public List<FuncSmall> NetSysFunc1 { get; set; }
+        public List<FuncSmall> SysFunc1 { get; set; }
 
         /// <summary>
         /// 子权限
@@ -83,7 +83,7 @@ namespace TTMS.Application.SystemMgtServices.Dtos
         {
             get
             {
-                return this.NetSysFunc1;
+                return this.SysFunc1;
             }
         }
 
